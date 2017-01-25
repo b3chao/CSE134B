@@ -1,0 +1,33 @@
+<form>
+  <label>select tag:</label>
+    <select>
+      <optgroup label="some options">
+        <option value="1"> opt1 </option>
+        <option value="2"> opt2 </option>
+      <optgroup label="more options">
+        <option value="3"> opt3 </option>
+        <option value="4"> opt4 </option>
+    </select>
+  <br>
+  <label>text area:</label>
+    <textarea></textarea>
+
+  <br>
+
+  <label>input and output tags:</label>
+    <form onsubmit="return false" oninput="o.value = a.valueAsNumber - b.valueAsNumber">
+     <input name=a type=number step=any> -
+     <input name=b type=number step=any> =
+     <output name=o for="a b"></output>
+    </form>
+
+  This assignment is <progress id="p" max=100><span>95 </span>%</progress> done!
+
+
+  <fieldset>
+    <legend>Fieldset (w/ legend):</legend>
+    Name: <input type="text"><br>
+    Email: <input type="text">
+  </fieldset>
+
+</form>
