@@ -1,0 +1,16 @@
+#welcome {
+  text-align: center;
+}
+
+.team-members, #project {
+  border: 1px solid;
+  margin: 5px 50px;
+  padding: 10px;
+  width: auto;
+  text-align: center;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
