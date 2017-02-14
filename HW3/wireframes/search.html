@@ -3,7 +3,7 @@
 
   <head>
     <title>Search your meals</title>
-    <link rel="stylesheet" href="search_sytle.css">
+    <link rel="stylesheet" href="../style/searchStyle.css">
   </head>
 
   <body>
@@ -18,28 +18,28 @@
 
     <br>
 
-    <section id='search'>
+    <section id='search' >
 
       <form>
-        <input placeholder='Search' id='search-input'>
+        <input placeholder='Search Meals' id='search-input' size='42'>
         <input type="submit" name="searchButton" value="search">
       </form>
 
       <div id='search-results'>
         <h3>Search Results</h3>
         <ul>
-          <li>
-            <span>Banana</span>
+          <li >
+            <span>Result A</span>
             <button>Show Detail</button>
             <button>Add To List</button>
           </li>
           <li>
-            <span>Result 2</span>
+            <span>Result B</span>
             <button>Show Detail</button>
             <button>Add To List</button>
           </li>
           <li>
-            <span>Result 3</span>
+            <span>Result C</span>
             <button>Show Detail</button>
             <button>Add To List</button>
           </li>
@@ -54,6 +54,11 @@
 
         <img src='https://usatftw.files.wordpress.com/2015/10/sleep-banana.jpg?w=1000&h=666' width='300px'>
         <table>
+          <tr id = "tableMenu">
+            <th></th>
+            <td>Mass</td>
+            <td>% Daily Value</td>
+          </tr>
           <tr>
             <th>Total Fat</th>
             <td>0.4g</td>
@@ -82,32 +87,27 @@
     <br />
     
 
-    <table border="1" width="40%">
-      <thead>
-        <tr>
-          <td colspan="4">Favorite List</td>
-        </tr>
-      </thead>
+    <table id='FavList'>
+      
+      <tr id="ListName" >
+          <th >Favorite List</th>
+      </tr>
+      
       <tbody>
-        <tr>
-          <td>Meal</td>
-          <td></td>
-        </tr>
-
         <tr>
           <td>spaghetti</td>
           
-          <td>
-            <form><input type=submit value="Remove" style="width:100%">
-            </form>
+          <td id= "btton">
+            <button>Remove
+            </button>
           </td>
         </tr>
         
         <tr>
           <td>Chicken Sandwitch</td>
-          <td>
-            <form><input type=submit value="Remove" style="width:100%">
-            </form>
+          <td id= "btton">
+            <button>Remove
+            </button>
           </td>
         </tr>     
       </tbody>

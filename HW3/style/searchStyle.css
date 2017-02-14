@@ -1,0 +1,78 @@
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+body {
+    background-image: url('../img/bg-2.jpg');
+    background-repeat: round;
+    
+}
+
+
+span{
+	color:#eaebec;
+}
+button{
+	background-color: #008CBA;
+	width:80px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    	
+    font-size: 12px;
+}
+#search-results li{
+	
+	
+	margin-bottom: 3px;
+	list-style-type: none;
+}
+table {
+	font-size:12px;
+	background:#eaebec;
+	margin:20px;
+	border:#ccc 2px solid;
+}
+
+table tr td:first-child{
+	text-align: left;
+	padding-left:20px;
+	border-left: 0;
+}
+
+table tr td {
+	
+	text-align: center;
+	padding-left:20px;
+
+	padding:12px;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+
+#FavList {
+	
+	position: absolute;
+	bottom: 400px;
+	left: 500px;
+}
+
+#FavList th{
+	height:30px;
+	text-align: center;
+
+}
+
+table tr:hover td{
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+}
