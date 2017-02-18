@@ -9,3 +9,33 @@ body {
     background-position: center center;  
     height: 100%;
 }
+
+#itable{
+	width:600px;
+	
+}
+#searchTable{
+	width:400px;
+}
+#betweenList{
+	padding:;
+}
+li{
+	padding: 2px;
+}
+#search_Button{
+	padding: 5px 15px;
+	background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    	
+    font-size: 12px;
+	
+}
+
+
+
+/* When the input field gets focus, change its width to 100% */
