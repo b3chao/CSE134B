@@ -1,40 +1,42 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 	<head>
-		<title>Food Tracking App (working title)</title>
-		<link rel="stylesheet" href="../style/login.css">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Meal App</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 	</head>
+<body>
+	<div class="container">
+		<h1>Meal App</h1>
+		<hr><br/>
 
-	<body>
-		<div class="container">
-			<h1 class="center">Meal App</h1>
-			<hr><br/>
+		<form action="home.html">
+			<label><b>Username</b></label><input type="text" name="username">
+			<label><b>Password</b></label><input type="text" name="password">
+			<div class="center">
+			<button type="submit">Login</button>
+			<button type="button">Forgot Password?</button>
+			</div>
+		</form>
 
+		<form action="#">
+			<h1 class="center">Sign Up!</h1>
+			<label><b>Email</b></label><input type="text" name="email">
+			<label><b>Username</b></label><input type="text" name="username">
+			<label><b>Password</b></label><input type="text" name="password">
+			<div class="center">
+			<button type="submit">Register</button>
+			</div>
+		</form>
 
-			
-			<form action="home.html">
-				<label><b>Username</b></label><input type="text" name="username">
-				<label><b>Password</b></label><input type="text" name="password">
-				<div class="center">
-					<button type="submit">Login</button>
-					<button type="button">Forgot Password?</button>
-				</div>
-			</form>
-
-			<form action="#">
-				<h1 class="center">Sign Up!</h1>
-				<label><b>Email</b></label><input type="text" name="email">
-				<label><b>Username</b></label><input type="text" name="username">
-				<label><b>Password</b></label><input type="text" name="password">
-				<div class="center">
-					<button type="submit">Register</button>
-				</div>
-			</form>
-
-			<footer>
-				<em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
-			</footer>
-		</div>
-	</body>
+		<footer>
+		<em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
+		</footer>
+	</div>
+</body>
 </html>
