@@ -1,0 +1,121 @@
+  <!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Search your meals</title>
+    <link rel="stylesheet" href="../bootstrap-style/bootstrap-grid.min.css">
+  </head>
+
+  <body>
+
+    <div id='navigation'>
+      <nav>
+        <a href='home.html'>Home page</a>
+        <a href='faq.html'>FAQ (How to use)</a>
+        <a href='index.html'>Logout</a>
+      </nav>
+    </div>
+
+    <br>
+
+    <section id='search' >
+
+      <form>
+        <input type="text" placeholder='Search Meals' name="search">
+        <button id="search_Button"> Search</button>
+      </form>
+
+      <div id='search-results'>
+        <h3>Search Results</h3>
+        <ul>
+          <li >
+            <span>Result A</span>
+            <button>Detail</button>
+            <button>Add To Favorite List</button>
+          </li>
+          <li>
+            <span>Result B</span>
+            <button>Detail</button>
+            <button>Add To Favorite List</button>
+          </li>
+          <li>
+            <span>Result C</span>
+            <button>Detail</button>
+            <button>Add To Favorite List</button>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <main>
+      <section id='food-details'>
+        <h3>Details</h3>
+
+        <img id = 'detailPic' src='https://usatftw.files.wordpress.com/2015/10/sleep-banana.jpg?w=1000&h=666' >
+        <table>
+          <tr id = "tableMenu">
+            <th></th>
+            <td>Mass</td>
+            <td>% Daily Value</td>
+          </tr>
+          <tr>
+            <th>Total Fat</th>
+            <td>0.4g</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <th>Saturated Fat</th>
+            <td>0.1g</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <th>Cholesterol</th>
+            <td>0 mg</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <th>Carbohydrate</th>
+            <td>27g</td>
+            <td>9%</td>
+          </tr>
+        </table>
+      </section>
+
+    </main>
+
+    <br />
+    
+
+    <table id='FavList'>
+      
+      <tr id="ListName" >
+          <th >Favorite List</th>
+      </tr>
+      
+      <tbody>
+        <tr>
+          <td>spaghetti</td>
+          
+          <td id= "btton">
+            <button>Remove
+            </button>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>Chicken Sandwitch</td>
+          <td id= "btton">
+            <button>Remove
+            </button>
+          </td>
+        </tr>     
+      </tbody>
+    </table>
+    <footer>
+      <em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
+    </footer>
+
+  </body>
+
+</html>
