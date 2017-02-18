@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 
   <head>
@@ -21,8 +21,8 @@
     <section id='search' >
 
       <form>
-        <input placeholder='Search Meals' id='search-input' size='42'>
-        <input type="submit" name="searchButton" value="search">
+        <input type="text" placeholder='Search Meals' name="search">
+        <button id="search_Button"> Search</button>
       </form>
 
       <div id='search-results'>
@@ -30,18 +30,18 @@
         <ul>
           <li >
             <span>Result A</span>
-            <button>Show Detail</button>
-            <button>Add To List</button>
+            <button>Detail</button>
+            <button>Add To Favorite List</button>
           </li>
           <li>
             <span>Result B</span>
-            <button>Show Detail</button>
-            <button>Add To List</button>
+            <button>Detail</button>
+            <button>Add To Favorite List</button>
           </li>
           <li>
             <span>Result C</span>
-            <button>Show Detail</button>
-            <button>Add To List</button>
+            <button>Detail</button>
+            <button>Add To Favorite List</button>
           </li>
         </ul>
       </div>
@@ -52,7 +52,7 @@
       <section id='food-details'>
         <h3>Details</h3>
 
-        <img src='https://usatftw.files.wordpress.com/2015/10/sleep-banana.jpg?w=1000&h=666' width='300px'>
+        <img id = 'detailPic' src='https://usatftw.files.wordpress.com/2015/10/sleep-banana.jpg?w=1000&h=666' >
         <table>
           <tr id = "tableMenu">
             <th></th>
