@@ -2,13 +2,7 @@
 <html>
 	<head>
 		<title>Shopping List</title>
-		<style type="text/css">
-			span {
-			    width: 100%;
-			    display: block;
-			}
-		</style>
-		<link rel="stylesheet" href="../style/searchStyle.css">
+		<link rel="stylesheet" href="../style/shoppingListStyle.css">
 	</head>
 
 	<body>
@@ -21,82 +15,59 @@
 		</div>
 
 		<br/>
-		<table border="1" width="40%">
+		<table>
 			<thead>
 				<tr>
-					<td colspan="4">Favorite List</td>
+					<td>Favorite List</td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td style="width: 59%"> Meal</td>
-					<td style="width: 25%">Amount</td>
-					<td>     </td>
+					<td> Meal</td>
+					<td>Amount</td>
+					<td>Add Meal To Shopping List</td>
 				</tr>
 
 				<tr>
 					<td>spaghetti</td>
-					<td><span id="A1" contenteditable></span></td>
 					<td>
-						<button>Add</button>
+						<button id = "incButton">+</button>
+						<div id = "mealAmount"> 2</div>
+						<button id = "decButton">-</button>
+					</td>
+					<td>
+						<button id="tableButton">Add</button>
+						<button id="tableButton">Remove</button>
 					</td>
 				</tr>
 				
 				<tr>
 					<td>Chicken Sandwitch</td>
-					<td><span id="A1" contenteditable></span></td>
-					<td>
-						<button>Add</button>
+					<td style='white-space: nowrap'>
+						<button id = "incButton">+</button>
+						<div id = "mealAmount" > 2</div>
+						<button id = "decButton">-</button>
+					</td>
+					<td style='white-space: nowrap'>
+						<button id="tableButton">Add</button>
+						<button id="tableButton">Remove</button>
 					</td>
 				</tr>			
 			</tbody>
 		</table>
 
 		<br/>
-		
-		<table border="1" width="40%">
+
+		<table>
 			<thead>
 				<tr>
-					<td colspan="4">Result List</td>
+					<td>Shopping List</td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td style="width: 59%">Meal</td>
-					<td style="width: 25%">Amount</td>
-					<td>     </td>
-				</tr>
-
-				<tr>
-					<td>spaghetti</td>
-					<td>2</td>
-					<td>
-						<button>Remove</button>
-					</td>
-				</tr>
-				
-				<tr>
-					<td>Chicken Sandwitch</td>
-					<td>3</td>
-					<td>
-						<button>Remove</button>
-					</td>
-				</tr>			
-			</tbody>
-		</table>
-		
-		<br />
-
-		<table border="1" width="40%">
-			<thead>
-				<tr>
-					<td colspan="4">Shopping List</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td style="width: 59%">Ingredient</td>
-					<td style="width: 41">Amount</td>
+					<td>Ingredient</td>
+					<td>Amount</td>
 				</tr>
 
 				<tr>

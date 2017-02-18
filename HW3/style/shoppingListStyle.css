@@ -1,3 +1,23 @@
+#incButton{
+	padding: 8px 8px;
+
+	
+}
+#decButton{
+
+	padding: 8px 8px;
+}
+
+#mealAmount{
+	font-size: 16px;
+}
+
+#tableButton{ 
+	width: 70px;
+	padding: 8px 8px;
+}
+
+
 footer {
   margin-top: 20px;
   text-align: center;
@@ -8,20 +28,11 @@ body {
     background-repeat: round;
     
 }
-input[type=text]{
-	width: 280px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-#search_Button{
-	padding: 5px 15px;
-
-}
 
 span{
 	color:#eaebec;
 }
+
 button{
 	background-color: #008CBA;
     border: none;
@@ -33,12 +44,8 @@ button{
     font-size: 12px;
 }
 
-
-#search-results li{
-	margin-bottom: 3px;
-	list-style-type: none;
-}
 table {
+	width:500px;
 	font-size:14px;
 	background:#eaebec;
 	margin:20px;
@@ -48,11 +55,12 @@ table {
 table tr td:first-child{
 	text-align: left;
 	padding-left:20px;
-	border-left: 0;
+	border-left: 2;
 }
 
+
 table tr td {
-	
+	colspan:4px
 	text-align: center;
 	padding-left:20px;
 
@@ -66,11 +74,13 @@ table tr td {
 	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
 }
 
-#detailPic{
-	padding-left:20px;
-	width:249px;
 
+table tr:hover td{
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
 }
+
 #FavList {
 	
 	position: absolute;
@@ -81,11 +91,12 @@ table tr td {
 #FavList th{
 	height:30px;
 	text-align: center;
-
+	
 }
 
-table tr:hover td{
-	background: #f2f2f2;
-	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
-	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+
+#mealAmount{
+	margin:2px;
+	padding:0px;
+	display:inline;
 }
