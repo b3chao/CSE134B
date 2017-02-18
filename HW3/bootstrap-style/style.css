@@ -11,14 +11,27 @@ body {
 }
 
 #itable{
-	width:600px;
+	width: 500px;
 	
+}
+#numBton{
+	width:120px;
+	text-align: center;
+}
+#mealAmount{
+	display: inline;
 }
 #searchTable{
 	width:400px;
 }
-#betweenList{
-	padding:;
+#FavTable{
+	width:400px;
+	position: absolute;
+	bottom: 64%;
+	left: 40%;
+}
+#editBtn{
+	text-align: center;
 }
 li{
 	padding: 2px;
