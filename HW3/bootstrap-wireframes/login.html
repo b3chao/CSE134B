@@ -8,30 +8,45 @@
 		<title>Meal App</title>
 
 		<!-- Bootstrap -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="../bootstrap-style/style.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
 	</head>
 <body>
 	<div class="container">
 		<h1>Meal App</h1>
-		<hr><br/>
 
-		<form action="home.html">
-			<label><b>Username</b></label><input type="text" name="username">
-			<label><b>Password</b></label><input type="text" name="password">
-			<div class="center">
-			<button type="submit">Login</button>
-			<button type="button">Forgot Password?</button>
+		<form id="login_form" action="home.html">
+			<div class="form-group">
+				<label for="username">Username</label>
+			<input type="username" class="form-control" id="username">
 			</div>
+			<div class="form-group">
+				<label for="pwd">Password</label>
+			<input type="password" class="form-control" id="pwd">
+			</div>
+
+			<button type="submit" class="btn btn-primary">Login</button>
+			<button type="button" class="btn btn-warning">Forgot Password</button>
 		</form>
 
-		<form action="#">
-			<h1 class="center">Sign Up!</h1>
-			<label><b>Email</b></label><input type="text" name="email">
-			<label><b>Username</b></label><input type="text" name="username">
-			<label><b>Password</b></label><input type="text" name="password">
-			<div class="center">
-			<button type="submit">Register</button>
+		<h2>Sign Up!</h2>
+
+		<form id="register_form" action="#">
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" id="email">
 			</div>
+			<div class="form-group">
+				<label for="username_register">Username</label>
+				<input type="username" class="form-control" id="username_register">
+			</div>
+			<div class="form-group">
+				<label for="pwd_register">Password</label>
+				<input type="password" class="form-control" id="pwd_register">
+			</div>
+
+			<button type="submit" class="btn btn-success">Register</button>
 		</form>
 
 		<footer>

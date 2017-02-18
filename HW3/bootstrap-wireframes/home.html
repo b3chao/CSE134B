@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
 
-  <head>
-    <title>Food Tracking App (working title)</title>
-    <link rel="stylesheet" href="../style/home.css">
-  </head>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../bootstrap-style/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="container">
 
-  <body>
-    <div class="container">
-      <ul class="menu">
-        <li><a href='home.html'>Home</a></li>
-        <li><a href='shoppingList.html'>Shopping List</a></li>
-        <li><a href='search.html'>Find Meals</a></li>
-        <li><a href='login.html'>Log Out</a></li>
-      </ul>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="home.html">Home</a></li>
+                <li><a href='shoppingList.html'>Shopping List</a></li>
+                <li><a href='search.html'>Find Meals</a></li>
+                <li><a href='login.html'>Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
 
-      <h1 class="center">My Favorite Meals</h1>
+    <h1>My Favorite Meals</h1>
 
-      <table style="width:100%">
-      <tr>
-        <th>Meal</th>
-        <th>Description</th> 
-      </tr>
-      <tr>
-        <td>Meal A</td>
-        <td>Description A</td>
-      </tr>
-      <tr>
-        <td>Meal B</td>
-        <td>Description B</td>
-      </tr>
-      <tr>
-        <td>Meal C</td>
-        <td>Description C</td>
-      </tr>
-      <tr>
-        <td>Meal D</td>
-        <td>Description D</td>
-      </tr>
+    <table class="table table-bordered table-hover table-nonfluid">
+        <tr>
+            <th class="col-xs-1">Meal</th>
+            <th class="col-xs-2">Description</th>
+        </tr>
+        <tr>
+            <td>Meal A</td>
+            <td>Description A</td>
+        </tr>
+        <tr>
+            <td>Meal B</td>
+            <td>Description B</td>
+        </tr>
+        <tr>
+            <td>Meal C</td>
+            <td>Description C</td>
+        </tr>
+        <tr>
+            <td>Meal D</td>
+            <td>Description D</td>
+        </tr>
     </table>
 
     <footer class="center">
-      <em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
+        <em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
     </footer>
-    </div>
-  </body>
-
+</div>
+</body>
 </html>
