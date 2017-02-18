@@ -1,0 +1,48 @@
+.container {
+    padding-left: 10%;
+    padding-right: 50%;
+}
+
+.center {
+    text-align: center;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url('../img/bg-2.jpg');
+    background-size: cover;                   
+    background-repeat: no-repeat;
+    background-position: center center;  
+    height: 100%;
+}
+
+form {
+    margin-bottom: 10%;
+}
+
+hr {
+  border: 0;
+  border-top: 3px double black;
+}
+
+button {
+    background-color: teal;
+    color: white;
+    padding: 15px;
+    margin: 10px 10px 10px;
+    border: solid teal;
+    cursor: pointer;
+    width: 30%;
+}
+
+input {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid;
+    box-sizing: border-box;
+}
