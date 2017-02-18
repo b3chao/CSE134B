@@ -3,58 +3,49 @@
 
   <head>
     <title>Food Tracking App (working title)</title>
-    <link rel="stylesheet" href="future_style_sheet.css">
+    <link rel="stylesheet" href="../style/home.css">
   </head>
 
   <body>
+    <div class="container">
+      <ul class="menu">
+        <li><a href='home.html'>Home</a></li>
+        <li><a href='shoppingList.html'>Shopping List</a></li>
+        <li><a href='search.html'>Find Meals</a></li>
+        <li><a href='faq.html'>FAQ</a></li>
+        <li><a href='login.html'>Log Out</a></li>
+      </ul>
 
-    <div id='navigation'>
-      <nav>
-        <a href='home.html'>Home page</a>
-        <a href='faq.html'>FAQ (How to use)</a>
-        <a href='index.html'>Logout</a>
-      </nav>
+      <h1 class="center">My Favorite Meals</h1>
+
+      <table style="width:100%">
+      <tr>
+        <th>Meal</th>
+        <th>Description</th> 
+      </tr>
+      <tr>
+        <td>Meal A</td>
+        <td>Description A</td>
+      </tr>
+      <tr>
+        <td>Meal B</td>
+        <td>Description B</td>
+      </tr>
+      <tr>
+        <td>Meal C</td>
+        <td>Description C</td>
+      </tr>
+      <tr>
+        <td>Meal D</td>
+        <td>Description D</td>
+      </tr>
+    </table>
+<!--
+      <footer>
+        <em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
+      </footer>
+      -->
     </div>
-
-    <br>
-
-    <main>
-      <a href="shoppingList.html">
-        <div>
-          <strong>My Shopping List</strong>
-        </div>
-      </a>
-
-      <a href="search.html">
-        <div>
-          <strong>Search Meals</strong>
-        </div>
-      </a>
-    </main>
-
-    <section id='meals'>
-      <header>
-        <h2>My Favorite Meals</h2>
-      </header>
-      <div id='meals-list'>
-        <ul>
-          <li class='meal-link'>
-            <a href='list.html'>Meal A</a>
-          </li>
-          <li class='meal-link'>
-            <a href='list.html'>Meal B</a>
-          </li>
-          <li class='meal-link'>
-            <a href='list.html'>Meal C</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <footer>
-      <em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
-    </footer>
-
   </body>
 
 </html>
