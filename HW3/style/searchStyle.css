@@ -57,6 +57,7 @@ input[type=text]{
 #search_Button{
 	padding: 5px 15px;
 
+	
 }
 
 span{
@@ -77,6 +78,8 @@ button{
 #search-results li{
 	margin-bottom: 3px;
 	list-style-type: none;
+	padding: 2px;
+}
 }
 table {
 	font-size:14px;
@@ -114,8 +117,8 @@ table tr td {
 #FavList {
 	
 	position: absolute;
-	bottom: 63%;
-	left: 36%;
+	bottom: 66%;
+	left: 500px;
 }
 
 #FavList th{

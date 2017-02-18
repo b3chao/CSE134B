@@ -2,13 +2,18 @@
 <html>
 
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Search your meals</title>
-    <link rel="stylesheet" href="../style/searchStyle.css">
+    <link rel="stylesheet" href="../bootstrap-style/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+     <link rel="stylesheet" href="../bootstrap-style/style.css">
   </head>
 
   <body>
   <div class="container">
-    <ul class="menu">
+    <ul >
       <li><a href='home.html'>Home</a></li>
       <li><a href='shoppingList.html'>Shopping List</a></li>
       <li><a href='search.html'>Find Meals</a></li>
@@ -25,18 +30,20 @@
         <ul>
           <li >
             <span>Result A</span>
-            <button>Detail</button>
-            <button>Add To Favorite List</button>
+            <button type="button" class="btn btn-info">Detail</button>
+            <button type="button" class="btn btn-success">Add To Favorite List</button>
           </li>
-          <li>
+         
+          <li >
             <span>Result B</span>
-            <button>Detail</button>
-            <button>Add To Favorite List</button>
+            <button type="button" class="btn btn-info">Detail</button>
+            <button type="button" class="btn btn-success">Add To Favorite List</button>
           </li>
-          <li>
+      
+          <li >
             <span>Result C</span>
-            <button>Detail</button>
-            <button>Add To Favorite List</button>
+            <button type="button" class="btn btn-info">Detail</button>
+            <button type="button" class="btn btn-success">Add To Favorite List</button>
           </li>
         </ul>
       </div>
@@ -45,29 +52,30 @@
       <section id='food-details'>
         <h3>Details</h3>
 
-        <img id = 'detailPic' src='https://usatftw.files.wordpress.com/2015/10/sleep-banana.jpg?w=1000&h=666' >
-        <table>
-          <tr id = "tableMenu">
+        <img id = 'detailPic' src='https://usatftw.files.wordpress.com/2015/10/sleep-banana.jpg?w=1000&h=666' class="img-circle" width="250" height="180">
+
+        <table id = 'searchTable' class='table table-bordered' >
+          <tr id = "tableMenu" class="btn-info">
             <th></th>
             <td>Mass</td>
             <td>% Daily Value</td>
           </tr>
-          <tr>
+          <tr class="btn-info">
             <th>Total Fat</th>
             <td>0.4g</td>
             <td>0%</td>
           </tr>
-          <tr>
+          <tr class="btn-info">
             <th>Saturated Fat</th>
             <td>0.1g</td>
             <td>0%</td>
           </tr>
-          <tr>
+          <tr class="btn-info">
             <th>Cholesterol</th>
             <td>0 mg</td>
             <td>0%</td>
           </tr>
-          <tr>
+          <tr class="btn-info">
             <th>Carbohydrate</th>
             <td>27g</td>
             <td>9%</td>
@@ -80,34 +88,31 @@
     <br />
     
 
-    <table id='FavList'>
+    <table id= 'FavTable' class='table table-bordered' >
       
-      <tr id="ListName" >
+      <tr id="ListName" class="btn-info">
           <th >Favorite List</th>
       </tr>
       
       <tbody>
-        <tr>
+        <tr class="btn-info">
           <td>spaghetti</td>
           
           <td id= "btton">
-            <button>Remove
+            <button type="button" class="btn btn-warning">Remove
             </button>
           </td>
         </tr>
         
-        <tr>
+        <tr class="btn-info">
           <td>Chicken Sandwitch</td>
           <td id= "btton">
-            <button>Remove
+            <button type="button" class="btn btn-warning">Remove
             </button>
           </td>
         </tr>     
       </tbody>
     </table>
-    <footer>
-      <em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
-    </footer>
   </div>
   </body>
 
