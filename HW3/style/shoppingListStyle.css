@@ -1,3 +1,48 @@
+.container {
+    padding-left: 10%;
+    padding-right: 45%;
+}
+
+.center {
+    text-align: center;
+}
+
+ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-bottom: 10%;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a {
+    display: block;
+    padding: 5px;
+    margin: 10px 10px 10px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url('../img/bg-2.jpg');
+    background-size: cover;                   
+    background-repeat: no-repeat;
+    background-position: center center;  
+    height: 100%;
+}
+
 #incButton{
 	padding: 8px 8px;
 
@@ -23,12 +68,6 @@ footer {
   text-align: center;
 }
 
-body {
-    background-image: url('../img/bg-2.jpg');
-    background-repeat: round;
-    
-}
-
 span{
 	color:#eaebec;
 }
@@ -42,43 +81,6 @@ button{
     text-decoration: none;
     	
     font-size: 12px;
-}
-
-table {
-	width:500px;
-	font-size:14px;
-	background:#eaebec;
-	margin:20px;
-	border:#ccc 2px solid;
-}
-
-table tr td:first-child{
-	text-align: left;
-	padding-left:20px;
-	border-left: 2;
-}
-
-
-table tr td {
-	colspan:4px
-	text-align: center;
-	padding-left:20px;
-
-	padding:12px;
-	border-top: 1px solid #ffffff;
-	border-bottom:1px solid #e0e0e0;
-	border-left: 1px solid #e0e0e0;
-	
-	background: #fafafa;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
-	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
-}
-
-
-table tr:hover td{
-	background: #f2f2f2;
-	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
-	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
 }
 
 #FavList {
@@ -99,4 +101,37 @@ table tr:hover td{
 	margin:2px;
 	padding:0px;
 	display:inline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 30px;
+}
+
+th {
+    background-color: #282828 ;
+    color: white;
+    height: 50px;
+    font-size: 14px;
+}
+
+td {
+    text-align: center;
+    height: 70px;
+    font-size: 14px;
+    color: white;
+}
+
+tr:nth-child(even) td { 
+    background: #909090; 
+}
+
+tr:nth-child(odd) td { 
+    background: #B0B0B0; 
+}
+
+caption {
+    font-size: 250%;
 }

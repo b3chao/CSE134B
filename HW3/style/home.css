@@ -29,7 +29,7 @@ ul.menu {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 10%;
 }
 
 .menu li {
@@ -64,6 +64,7 @@ td {
     text-align: center;
     height: 70px;
     font-size: 14px;
+    color: white;
 }
 
 tr:nth-child(even) td { 
