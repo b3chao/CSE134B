@@ -65,8 +65,8 @@ tr:nth-child(odd) td {
 #FavTable{
 	width:400px;
 	position: absolute;
-	bottom: 64%;
-	left: 450px;
+	bottom: 70%;
+	left: 570px;
 }
 #editBtn{
 	text-align: center;
@@ -74,19 +74,13 @@ tr:nth-child(odd) td {
 li{
 	padding: 2px;
 }
-#search_Button{
-	padding: 5px 15px;
-	background-color: #008CBA;
+#search_Button {
+    padding: 5px 15px;
+    background-color: #008CBA;
     border: none;
     color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    	
     font-size: 12px;
-	
 }
-
-
-
-/* When the input field gets focus, change its width to 100% */
