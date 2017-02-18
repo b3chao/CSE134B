@@ -3,41 +3,38 @@
 
 	<head>
 		<title>Food Tracking App (working title)</title>
-		<link rel="stylesheet" href="future_style_sheet.css">
+		<link rel="stylesheet" href="../style/login.css">
 	</head>
 
 	<body>
+		<div class="container">
+			<h1 class="center">Meal App</h1>
+			<hr><br/>
 
-		<section id="header">
-			<nav>
-				<a> Food Tracking App</a>
-				<a href="faq.html">FAQ</a>
-			</nav>
-		</section>
 
-		<br/>
-
-		<section id="login">
-			<form>
-				<label>Username:</label><input type="text" name="username">
-				<label>Password:</label><input type="text" name="password">
-				<button type="button">Login</button>
-				<button type="button">Register</button>
+			
+			<form action="home.html">
+				<label><b>Username</b></label><input type="text" name="username">
+				<label><b>Password</b></label><input type="text" name="password">
+				<div class="center">
+					<button type="submit">Login</button>
+					<button type="button">Forgot Password?</button>
+				</div>
 			</form>
-			<form>
-				<label>Registered Email:</label><input type="text" name="email">
-				<button type="button">Forgot Password?</button>
+
+			<form action="#">
+				<h1 class="center">Sign Up!</h1>
+				<label><b>Email</b></label><input type="text" name="email">
+				<label><b>Username</b></label><input type="text" name="username">
+				<label><b>Password</b></label><input type="text" name="password">
+				<div class="center">
+					<button type="submit">Register</button>
+				</div>
 			</form>
-		</section>
-		<br/>
 
-		<section id="login_page_img">
-			<img src="../img/login_page_img.png">
-		</section>
-		<br/>
-
-		<footer>
-			<em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
-		</footer>
+			<footer>
+				<em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
+			</footer>
+		</div>
 	</body>
 </html>
