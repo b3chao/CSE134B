@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Meal App</title>
+
+		<!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="./style/login.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+	</head>
+<body>
+	<div id='login-body'>
+		<h1>Meal App</h1>
+
+		<form id="login_form" action="home.html">
+			<div class="form-group">
+				<label for="username">Username</label>
+			<input type="username" class="form-control" id="username">
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password</label>
+			<input type="password" class="form-control" id="pwd">
+			</div>
+
+			<button type="submit" class="btn btn-primary login-btn">Login</button>
+			<button type="button" class="btn btn-warning login-btn">Forgot Password</button>
+		</form>
+
+		<h2>Sign Up!</h2>
+
+		<form id="register_form" action="#">
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" id="email">
+			</div>
+			<div class="form-group">
+				<label for="username_register">Username</label>
+				<input type="username" class="form-control" id="username_register">
+			</div>
+			<div class="form-group">
+				<label for="pwd_register">Password</label>
+				<input type="password" class="form-control" id="pwd_register">
+			</div>
+
+			<button type="submit" class="btn btn-success signup-btn">Register</button>
+		</form>
+
+		<footer>
+			<em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
+		</footer>
+	</div>
+</body>
+</html>
