@@ -8,40 +8,26 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var signup = function(email, password) {
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-    document.getElementById('error-msg').innerHTML = error.message;
-    console.log(error);
-  });
-}
-
-var login = function(email, password) {
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-    document.getElementById('error-msg').innerHTML = error.message;
-    console.log(error);
-  });
-}
-
 var handleSignup = function() {
   var email = document.getElementById('email').value;
   var pwd = document.getElementById('pwd').value;
-  signup(email, pwd);
+  firebase.auth().createUserWithEmailAndPassword(email, pwd).catch(function(error) {
+    document.getElementById('error-msg').innerHTML = error.message;
+  });
 }
 
 var handleLogin = function() {
   var email = document.getElementById('email').value;
   var pwd = document.getElementById('pwd').value;
-  login(email, pwd);
+  firebase.auth().signInWithEmailAndPassword(email, pwd).catch(function(error) {
+    document.getElementById('error-msg').innerHTML = error.message;
+  });
 }
 
 var handleGoogleLogin = function() {
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function(result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
     var user = result.user;
-    // ...
   }).catch(function(error) {
     document.getElementById('error-msg').innerHTML = error.message;
   });
