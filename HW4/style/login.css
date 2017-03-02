@@ -25,6 +25,16 @@ body {
   font-size: 15px;
 }
 
+#google-login {
+  opacity: 0.8;
+}
+
+#google-login:hover {
+  opacity: 1;
+  cursor: pointer;
+  cursor: hand;
+}
+
 footer {
     position: absolute;
     right: 0;

@@ -28,15 +28,24 @@
 
 			<button type="submit" class="btn btn-primary login-btn" onclick="handleLogin()">Login</button>
 			<button type="submit" class="btn btn-success signup-btn" onclick="handleSignup()">Register</button>
+
 		</div>
 
+		<h4>Or...</h4>
+
+		<a id='google-login' onclick='handleGoogleLogin()'>
+			<img height=38px src='./img/google-signin.png'>
+		</a>
+
 		<div id="error-msg"></div>
+
 
 		<footer>
 			<em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
 		</footer>
 	</div>
 </body>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
 

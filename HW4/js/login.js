@@ -34,6 +34,19 @@ var handleLogin = function() {
   login(email, pwd);
 }
 
+var handleGoogleLogin = function() {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+  }).catch(function(error) {
+    document.getElementById('error-msg').innerHTML = error.message;
+  });
+}
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     window.location = './home.html'
