@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Home Page</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="./style/login.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="container">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="home.html">Home</a></li>
+                <li><a href='shoppingList.html'>Shopping List</a></li>
+                <li><a href='search.html'>Find Meals</a></li>
+                <li><a onclick='logout()'>Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>My Favorite Meals</h1>
+
+    <table class="table table-bordered table-hover table-nonfluid">
+        <tr>
+            <th class="col-xs-1">Meal</th>
+            <th class="col-xs-2">Description</th>
+        </tr>
+        <tr>
+            <td>Meal A</td>
+            <td>Description A</td>
+        </tr>
+        <tr>
+            <td>Meal B</td>
+            <td>Description B</td>
+        </tr>
+        <tr>
+            <td>Meal C</td>
+            <td>Description C</td>
+        </tr>
+        <tr>
+            <td>Meal D</td>
+            <td>Description D</td>
+        </tr>
+    </table>
+
+    <footer class="center">
+        <em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
+    </footer>
+</div>
+</body>
+</html>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+<script src="./js/home.js"></script>

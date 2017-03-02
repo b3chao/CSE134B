@@ -12,10 +12,17 @@ body {
 }
 
 #login-body {
+  margin-top:10%;
   margin-left:auto;
   margin-right:auto;
   text-align:center;
   width: 300px;
+}
+
+#error-msg {
+  margin-top: 10px;
+  color: white;
+  font-size: 15px;
 }
 
 footer {
@@ -36,7 +43,7 @@ footer {
 }
 
 .signup-btn {
-  width: 99%;
+  width: 49%;
 }
 
 th {
