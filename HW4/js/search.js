@@ -22,11 +22,6 @@ $(document).ready(function () {
     $("#search_button").click(searchMeal);
 })
 
-function addMeal() {
-    console.log("Adding Meal");
-    console.log(this);
-}
-
 function searchMeal(e) {
     e.preventDefault();
 
@@ -51,14 +46,13 @@ function searchMeal(e) {
                 result['img'] = recipe['image'];
                 result['calories'] = recipe['calories'];
                 result['ingredients'] = recipe['ingredientLines'].join(', ');
+                result['ingredient_array'] = recipe['ingredientLines'];
+                result['url'] = recipe['url'];
                 results.push(result);
             }
 
             var vueData = {};
             vueData['results'] = results;
-
-            console.log("rendData");
-            console.log(results);
 
             new Vue({
                 el: '#search_results',
@@ -85,7 +79,7 @@ function searchMeal(e) {
                         }
                     }
                 }
-            })
+            });
         }
     });
 }

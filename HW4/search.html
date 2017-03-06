@@ -38,6 +38,7 @@
             <h3>{{ result.label }}</h3>
             <p>Calories: {{ result.calories }}</p>
             <p>Ingredients: {{ result.ingredients }}</p>
+            <p><a :href="result.url">Recipe Guide Link</a></p>
             <button class="btn btn-primary addButton" :name="index" v-on:click="addMeal(index, $event)">Add to Favorites</button>
         </div>
     </div>
