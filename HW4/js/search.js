@@ -23,6 +23,8 @@ $(document).ready(function () {
 })
 
 function searchMeal(e) {
+    e.preventDefault();
+
     var q = $("#search_input").val();
 
     var params = {
@@ -34,7 +36,6 @@ function searchMeal(e) {
     params['q'] = q;
 
     $.post("https://api.edamam.com/search", params, function (data, status) {
-        console.log(data);
         if (data.hits.length != 0) {
             var results = [];
             for (var i in data.hits) {
