@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="./style/style.css" rel="stylesheet">
+    <link href="./style/searchStyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,16 +33,19 @@
     </div>
     <br>
 
-    <div v-cloak id='search_results'>
-        <div v-for="(result, index) in results">
-            <img :src="result.img" height="50%" width="50%">
-            <h3>{{ result.label }}</h3>
-            <p>Calories: {{ result.calories }}</p>
-            <p>Ingredients: {{ result.ingredients }}</p>
-            <p><a :href="result.url">Recipe Guide Link</a></p>
+    <table v-cloak id='search_results'>
+        <tr v-for="(result, index) in results" id="searchRow"> 
+            <td>
+                <img :src="result.img" id="searchImages">
+            </td>
+            <td id="searchLabel">{{ result.label }}</td>
+            <td id="searchCal">Calories: {{ result.calories }}</td>
+            <td><a :href="result.url">Recipe Guide Link</a></td>
+            <td id="btnAddToList">
             <button class="btn btn-primary addButton" :name="index" v-on:click="addMeal(index, $event)">Add to Favorites</button>
-        </div>
-    </div>
+            </td>
+        </tr>
+    </table>
     <br/>
 </div>
 
