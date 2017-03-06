@@ -33,13 +33,15 @@
             <th class="col-xs-1">Meal</th>
             <th class="col-xs-2">Description</th>
         </tr>
-        <tr v-cloak v-for="result in results">
-            <td><img :src="result.img" heigh="20%" width="20%"></td>
+        <tr v-cloak v-for="(result, index) in results">
+            <td><img :src="result.img" height="40%" width="40%"></td>
             <td>
                 <p>{{ result.label }}</p>
                 <p>Calories: {{ result.calories }}</p>
                 <p><a :href="result.url">Recipe Guide Url</a></p>
             </td>
+            <td><button class="btn btn-primary" v-on:click="rankUp(index, $event)">Rank Up Meal</button></td>
+            <td><button class="btn btn-primary" v-on:click="removeMeal(index, $event)">Remove</button></td>
         </tr>
     </table>
 
