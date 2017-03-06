@@ -43,27 +43,9 @@
             <td id="searchCal">Calories: {{ result.calories }}</td>
             <td><a :href="result.url" target="_blank">Recipe Guide Link</a></td>
             <td id="btnAddToList">
-                <button class="btn btn-primary addButton" data-toggle="modal" :data-target="modal_target">Add to Favorites
+                <button class="btn btn-primary addButton" v-on:click="addMeal(index, $event)">Add to Favorites
                 </button>
             </td>
-            <!-- Modal -->
-            <div :id="modal_id" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Modal Header</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Add {{ result.label }} to favorites?</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="addMeal(index, $event)>Close</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </tr>
     </table>
     <br/>

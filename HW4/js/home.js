@@ -10,11 +10,10 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var ref = database.ref();
 
-var logout = function () {
-    firebase.auth().signOut().then(function () {
-        console.log("signout successful");
+var logout = function() {
+    firebase.auth().signOut().then(function() {
         window.location = './login.html';
-    }, function (error) {
+    }, function(error) {
         // An error happened.
     });
 }
@@ -25,9 +24,8 @@ $(document).ready(function () {
 
 function initializePage(e) {
     //get current user ref
-    user = firebase.auth().currentUser;
-    console.log(user);
-    if (user) {
+    //user = firebase.auth().currentUser;
+    if (false) {
         var cuRef = ref.child(user.uid);
         cuRef.once("value", function (snapshot) {
             var cuData = snapshot.val();
