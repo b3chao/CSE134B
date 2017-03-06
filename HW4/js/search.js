@@ -76,6 +76,7 @@ function searchMeal(e) {
                                 }
 
                                 cuRef.set(cuData);
+                                alert("Added " + toAdd['label'] + " to favorites");
                                 location.reload();
                             });
                         }

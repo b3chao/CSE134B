@@ -43,7 +43,7 @@
             <td id="searchCal">Calories: {{ result.calories }}</td>
             <td><a :href="result.url" target="_blank">Recipe Guide Link</a></td>
             <td id="btnAddToList">
-                <button class="btn btn-primary addButton" v-on:click="addMeal(index, $event)">Add to Favorites
+                <button class="btn btn-primary" v-on:click="addMeal(index, $event)">Add to Favorites
                 </button>
             </td>
         </tr>

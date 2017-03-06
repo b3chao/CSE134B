@@ -38,15 +38,20 @@ function initializePage(e) {
                         methods: {
                             //remove meal from favorites list
                             removeMeal: function (index, event) {
-                                var toRemoveRef = ref.child(user.uid + "/" + index);
-                                toRemoveRef.remove();
-                                location.reload();
+                                var cuRef = ref.child(user.uid);
+                                cuRef.once("value", function (snapshot) {
+                                    var cuData = snapshot.val();
+                                    cuData.splice(index, 1);
+                                    cuRef.set(cuData);
+
+                                    location.reload();
+                                });
                             },
                             //rank up meal in favorites list
                             rankUp: function (index, event) {
                                 if (index != 0) {
                                     var cuRef = ref.child(user.uid);
-                                    cuRef.once("value", function(snapshot) {
+                                    cuRef.once("value", function (snapshot) {
                                         var cuData = snapshot.val();
                                         var temp = cuData[index - 1];
                                         cuData[index - 1] = cuData[index];
