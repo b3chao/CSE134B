@@ -23,8 +23,6 @@ $(document).ready(function () {
 })
 
 function searchMeal(e) {
-    e.preventDefault();
-
     var q = $("#search_input").val();
 
     var params = {
@@ -53,8 +51,9 @@ function searchMeal(e) {
 
             var vueData = {};
             vueData['results'] = results;
+            console.log(results);
 
-            new Vue({
+            var vm = new Vue({
                 el: '#search_results',
                 data: vueData,
                 methods: {
