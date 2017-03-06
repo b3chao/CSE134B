@@ -33,8 +33,18 @@ var handleGoogleLogin = function() {
   });
 }
 
+var logout = function () {
+    firebase.auth().signOut().then(function () {
+        console.log("signout successful");
+        window.location = './login.html';
+    }, function (error) {
+        // An error happened.
+    });
+}
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    window.location = './home.html'
+    console.log(user.email);
+    //window.location = './home.html'
   }
 });

@@ -46,6 +46,8 @@ function searchMeal(e) {
                 result['ingredients'] = recipe['ingredientLines'].join(', ');
                 result['ingredient_array'] = recipe['ingredientLines'];
                 result['url'] = recipe['url'];
+                result['modal_target'] = "#modal_" + i;
+                result['modal_id'] = "modal_" + i;
                 results.push(result);
             }
 

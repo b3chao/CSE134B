@@ -12,6 +12,7 @@ var ref = database.ref();
 
 var logout = function () {
     firebase.auth().signOut().then(function () {
+        console.log("signout successful");
         window.location = './login.html';
     }, function (error) {
         // An error happened.
@@ -24,45 +25,43 @@ $(document).ready(function () {
 
 function initializePage(e) {
     //get current user ref
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            var cuRef = ref.child(user.uid);
-            cuRef.once("value", function (snapshot) {
-                var cuData = snapshot.val();
-                var vueData = {};
-                vueData['results'] = cuData;
-                if (cuData) {
-                    new Vue({
-                        el: '#favorite_list',
-                        data: vueData,
-                        methods: {
-                            //remove meal from favorites list
-                            removeMeal: function (index, event) {
-                                var toRemoveRef = ref.child(user.uid + "/" + index);
-                                toRemoveRef.remove();
-                                location.reload();
-                            },
-                            //rank up meal in favorites list
-                            rankUp: function (index, event) {
-                                if (index != 0) {
-                                    var cuRef = ref.child(user.uid);
-                                    cuRef.once("value", function(snapshot) {
-                                        var cuData = snapshot.val();
-                                        var temp = cuData[index - 1];
-                                        cuData[index - 1] = cuData[index];
-                                        cuData[index] = temp;
-                                        cuRef.set(cuData);
+    user = firebase.auth().currentUser;
+    console.log(user);
+    if (user) {
+        var cuRef = ref.child(user.uid);
+        cuRef.once("value", function (snapshot) {
+            var cuData = snapshot.val();
+            var vueData = {};
+            vueData['results'] = cuData;
+            if (cuData) {
+                new Vue({
+                    el: '#favorite_list',
+                    data: vueData,
+                    methods: {
+                        //remove meal from favorites list
+                        removeMeal: function (index, event) {
+                            var toRemoveRef = ref.child(user.uid + "/" + index);
+                            toRemoveRef.remove();
+                            location.reload();
+                        },
+                        //rank up meal in favorites list
+                        rankUp: function (index, event) {
+                            if (index != 0) {
+                                var cuRef = ref.child(user.uid);
+                                cuRef.once("value", function (snapshot) {
+                                    var cuData = snapshot.val();
+                                    var temp = cuData[index - 1];
+                                    cuData[index - 1] = cuData[index];
+                                    cuData[index] = temp;
+                                    cuRef.set(cuData);
 
-                                        location.reload();
-                                    });
-                                }
+                                    location.reload();
+                                });
                             }
                         }
-                    });
-                }
-            });
-        } else {
-            window.location = './login.html';
-        }
-    });
+                    }
+                });
+            }
+        });
+    }
 }
