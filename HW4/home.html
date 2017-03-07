@@ -10,6 +10,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="./style/style.css" rel="stylesheet">
+   <link href="./style/homeStyle.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -19,7 +20,7 @@
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li><a href="home.html">Home</a></li>
-                <li><a href='shoppingList.html'>Shopping List</a></li>
+                <!-- <li><a href='shoppingList.html'>Shopping List</a></li> -->
                 <li><a href='search.html'>Find Meals</a></li>
                 <li><a onclick='logout()'>Log Out</a></li>
             </ul>
@@ -32,22 +33,21 @@
         <tr>
             <th class="col-xs-1">Meals</th>
             <th class="col-xs-2">Description</th>
+            <th>Calories</th>
+            <th>Detail Link</th>
+            <th></th><th></th>
         </tr>
         <tr v-cloak v-for="(result, index) in results">
-            <td><img :src="result.img" height="40%" width="40%"></td>
-            <td>
-                <p>{{ result.label }}</p>
-                <p>Calories: {{ result.calories }}</p>
-                <p><a :href="result.url">Recipe Guide Url</a></p>
-            </td>
+            <td><img :src="result.img" id = "homeImages"></td>
+          
+            <td id="homeLabel">{{ result.label }}</td>
+            <td id="homeCals">Calories: {{ result.calories }}</td>
+            <td><a :href="result.url">Recipe Guide Url</a></td>
             <td><button class="btn btn-primary" v-on:click="rankUp(index, $event)">Rank Up Meal</button></td>
             <td><button class="btn btn-primary" v-on:click="removeMeal(index, $event)">Remove</button></td>
         </tr>
     </table>
 
-    <footer class="center">
-        <em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
-    </footer>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
