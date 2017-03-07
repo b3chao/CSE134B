@@ -8,29 +8,29 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var handleSignup = function() {
-  var email = document.getElementById('email').value;
-  var pwd = document.getElementById('pwd').value;
-  firebase.auth().createUserWithEmailAndPassword(email, pwd).catch(function(error) {
-    document.getElementById('error-msg').innerHTML = error.message;
-  });
+var handleSignup = function () {
+    var email = document.getElementById('email').value;
+    var pwd = document.getElementById('pwd').value;
+    firebase.auth().createUserWithEmailAndPassword(email, pwd).catch(function (error) {
+        document.getElementById('error-msg').innerHTML = error.message;
+    });
 }
 
-var handleLogin = function() {
-  var email = document.getElementById('email').value;
-  var pwd = document.getElementById('pwd').value;
-  firebase.auth().signInWithEmailAndPassword(email, pwd).catch(function(error) {
-    document.getElementById('error-msg').innerHTML = error.message;
-  });
+var handleLogin = function () {
+    var email = document.getElementById('email').value;
+    var pwd = document.getElementById('pwd').value;
+    firebase.auth().signInWithEmailAndPassword(email, pwd).catch(function (error) {
+        document.getElementById('error-msg').innerHTML = error.message;
+    });
 }
 
-var handleGoogleLogin = function() {
-  var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    var user = result.user;
-  }).catch(function(error) {
-    document.getElementById('error-msg').innerHTML = error.message;
-  });
+var handleGoogleLogin = function () {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+        var user = result.user;
+    }).catch(function (error) {
+        document.getElementById('error-msg').innerHTML = error.message;
+    });
 }
 
 var logout = function () {
@@ -42,9 +42,9 @@ var logout = function () {
     });
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    console.log(user.email);
-    window.location = './home.html';
-  }
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        console.log(user.email);
+        window.location = './home.html';
+    }
 });

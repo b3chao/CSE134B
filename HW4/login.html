@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Meal App</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Meal App</title>
 
-		<!-- Bootstrap -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link href="./style/style.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
-	</head>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="./style/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
 <body>
-	<div id='login-body'>
-		<h1>Meal App</h1>
+<div id='login-body'>
+    <h1>Meal App</h1>
 
-		<div id="login_form">
-			<div class="form-group">
-				<label for="email_login">Email</label>
-				<input type="email" class="form-control" id="email">
-			</div>
-			<div class="form-group">
-				<label for="pwd_login">Password</label>
-				<input type="password" class="form-control" id="pwd">
-			</div>
+    <div id="login_form">
+        <div class="form-group">
+            <label for="email_login">Email</label>
+            <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+            <label for="pwd_login">Password</label>
+            <input type="password" class="form-control" id="pwd">
+        </div>
 
-			<button type="submit" class="btn btn-primary login-btn" onclick="handleLogin()">Login</button>
-			<button type="submit" class="btn btn-success signup-btn" onclick="handleSignup()">Register</button>
+        <button type="submit" class="btn btn-primary login-btn" onclick="handleLogin()">Login</button>
+        <button type="submit" class="btn btn-success signup-btn" onclick="handleSignup()">Register</button>
 
-		</div>
+    </div>
 
-		<h4>Or...</h4>
+    <h4>Or...</h4>
 
-		<a id='google-login' onclick='handleGoogleLogin()'>
-			<img height=38px src='./img/google-signin.png'>
-		</a>
+    <a id='google-login' onclick='handleGoogleLogin()'>
+        <img height=38px src='./img/google-signin.png'>
+    </a>
 
-		<div id="error-msg"></div>
+    <div id="error-msg"></div>
 
 
-		<footer>
-			<em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
-		</footer>
-	</div>
+    <footer>
+        <em>Created by Milad Imen, Brian Chao, and Tianyi Li</em>
+    </footer>
+</div>
 </body>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>

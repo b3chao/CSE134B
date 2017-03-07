@@ -10,7 +10,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="./style/style.css" rel="stylesheet">
-   <link href="./style/homeStyle.css" rel="stylesheet">
+    <link href="./style/homeStyle.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -35,16 +35,21 @@
             <th class="col-xs-2">Description</th>
             <th>Calories</th>
             <th>Detail Link</th>
-            <th>Move Up</th><th>Remove</th>
+            <th>Move Up</th>
+            <th>Remove</th>
         </tr>
         <tr v-cloak v-for="(result, index) in results">
-            <td><img :src="result.img" id = "homeImages"></td>
-          
+            <td><img :src="result.img" id="homeImages"></td>
+
             <td id="homeLabel">{{ result.label }}</td>
             <td id="homeCals">Calories: {{ result.calories }}</td>
             <td><a :href="result.url">Recipe Guide Url</a></td>
-            <td><button class="btn btn-primary" v-on:click="rankUp(index, $event)">Rank Up Meal</button></td>
-            <td><button class="btn btn-primary" v-on:click="removeMeal(index, $event)">Remove</button></td>
+            <td>
+                <button class="btn btn-primary" v-on:click="rankUp(index, $event)">Rank Up Meal</button>
+            </td>
+            <td>
+                <button class="btn btn-primary" v-on:click="removeMeal(index, $event)">Remove</button>
+            </td>
         </tr>
     </table>
 

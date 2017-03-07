@@ -20,10 +20,15 @@ var logout = function () {
 
 $(document).ready(function () {
     $("#search_button").click(searchMeal);
+    $("#clear_search").click(function () {
+        $("#search_button").show();
+        location.reload();
+    });
 })
 
 function searchMeal(e) {
     e.preventDefault();
+    $("#search_button").hide();
 
     var q = $("#search_input").val();
 
@@ -43,7 +48,7 @@ function searchMeal(e) {
                 var recipe = data.hits[i]['recipe'];
                 result['label'] = recipe['label'];
                 result['img'] = recipe['image'];
-                result['calories'] = recipe['calories'];
+                result['calories'] = parseInt(recipe['calories']);
                 result['ingredients'] = recipe['ingredientLines'].join(', ');
                 result['ingredient_array'] = recipe['ingredientLines'];
                 result['url'] = recipe['url'];
@@ -60,12 +65,12 @@ function searchMeal(e) {
                 el: '#search_results',
                 data: vueData,
                 methods: {
-                    addMeal: function(index, event) {
+                    addMeal: function (index, event) {
                         var user = firebase.auth().currentUser;
                         if (user) {
                             var toAdd = this.results[index];
                             var cuRef = ref.child(user.uid);
-                            cuRef.once("value", function(snapshot) {
+                            cuRef.once("value", function (snapshot) {
                                 var cuData = snapshot.val();
 
                                 if (cuData) {
@@ -83,6 +88,8 @@ function searchMeal(e) {
                     }
                 }
             });
+        } else {
+            alert("No results found!");
         }
     });
 }
