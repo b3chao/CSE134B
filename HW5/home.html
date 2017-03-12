@@ -27,31 +27,31 @@
     </nav>
 
     <h1>My Favorite Meals</h1>
+    <div id= "home_table_scroll">
+        <table id="favorite_list" class="table table-bordered table-hover table-nonfluid">
+            <tr>
+                <th class="col-xs-1">Meals</th>
+                <th class="col-xs-2">Description</th>
+                <th>Calories</th>
+                <th>Detail Link</th>
+                <th>Move Up</th>
+                <th>Remove</th>
+            </tr>
+            <tr v-cloak v-for="(result, index) in results">
+                <td><img :src="result.img" id="homeImages"></td>
 
-    <table id="favorite_list" class="table table-bordered table-hover table-nonfluid">
-        <tr>
-            <th class="col-xs-1">Meals</th>
-            <th class="col-xs-2">Description</th>
-            <th>Calories</th>
-            <th>Detail Link</th>
-            <th>Move Up</th>
-            <th>Remove</th>
-        </tr>
-        <tr v-cloak v-for="(result, index) in results">
-            <td><img :src="result.img" id="homeImages"></td>
-
-            <td id="homeLabel">{{ result.label }}</td>
-            <td id="homeCals">Calories: {{ result.calories }}</td>
-            <td><a :href="result.url">Recipe Guide Url</a></td>
-            <td>
-                <button class="btn btn-primary" v-on:click="rankUp(index, $event)">Rank Up Meal</button>
-            </td>
-            <td>
-                <button class="btn btn-primary" v-on:click="removeMeal(index, $event)">Remove</button>
-            </td>
-        </tr>
-    </table>
-
+                <td id="homeLabel">{{ result.label }}</td>
+                <td id="homeCals">Calories: {{ result.calories }}</td>
+                <td><a :href="result.url">Recipe Guide Url</a></td>
+                <td>
+                    <button class="btn btn-primary" v-on:click="rankUp(index, $event)">Rank Up Meal</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" v-on:click="removeMeal(index, $event)">Remove</button>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
