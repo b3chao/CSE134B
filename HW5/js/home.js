@@ -6,6 +6,7 @@ var config = {
     storageBucket: "",
     messagingSenderId: "295582276921"
 };
+
 firebase.initializeApp(config);
 var database = firebase.database();
 var ref = database.ref();
@@ -18,54 +19,51 @@ var logout = function () {
     });
 }
 
-$(document).ready(function () {
-    initializePage();
-})
-
-function initializePage(e) {
-    //get current user ref
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            var cuRef = ref.child(user.uid);
+var vm = new Vue({
+    el: '#favorite_list',
+    data: {
+      favorites: null,
+      user: null
+    },
+    created: function() {
+      var $this = this;
+      firebase.auth().onAuthStateChanged(function (fb_user) {
+          if (fb_user) {
+              $this.user = fb_user;
+              var cuRef = ref.child($this.user.uid);
+              cuRef.once("value", function (snapshot) {
+                  var cuData = snapshot.val();
+                  $this.favorites = cuData;
+              });
+          }
+      });
+    },
+    methods: {
+        //remove meal from favorites list
+        removeMeal: function (index, event) {
+            var cuRef = ref.child(this.user.uid);
+            var $this = this;
             cuRef.once("value", function (snapshot) {
                 var cuData = snapshot.val();
-                var vueData = {};
-                vueData['results'] = cuData;
-                if (cuData) {
-                    new Vue({
-                        el: '#favorite_list',
-                        data: vueData,
-                        methods: {
-                            //remove meal from favorites list
-                            removeMeal: function (index, event) {
-                                var cuRef = ref.child(user.uid);
-                                cuRef.once("value", function (snapshot) {
-                                    var cuData = snapshot.val();
-                                    cuData.splice(index, 1);
-                                    cuRef.set(cuData);
-
-                                    location.reload();
-                                });
-                            },
-                            //rank up meal in favorites list
-                            rankUp: function (index, event) {
-                                if (index != 0) {
-                                    var cuRef = ref.child(user.uid);
-                                    cuRef.once("value", function (snapshot) {
-                                        var cuData = snapshot.val();
-                                        var temp = cuData[index - 1];
-                                        cuData[index - 1] = cuData[index];
-                                        cuData[index] = temp;
-                                        cuRef.set(cuData);
-
-                                        location.reload();
-                                    });
-                                }
-                            }
-                        }
-                    });
-                }
+                cuData.splice(index, 1);
+                cuRef.set(cuData);
+                $this.favorites = cuData;
             });
+        },
+        //rank up meal in favorites list
+        rankUp: function (index, event) {
+            if (index != 0) {
+                var cuRef = ref.child(this.user.uid);
+                var $this = this;
+                cuRef.once("value", function(snapshot) {
+                    var cuData = snapshot.val();
+                    var temp = cuData[index - 1];
+                    cuData[index - 1] = cuData[index];
+                    cuData[index] = temp;
+                    cuRef.set(cuData);
+                    $this.favorites = cuData;
+                });
+            }
         }
-    });
-}
+    }
+});
