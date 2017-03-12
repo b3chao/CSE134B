@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Home Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="./style/style.css" rel="stylesheet">
+    <link href="./style/homeStyle.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="home.html">Home</a></li>
+                <!-- <li><a href='shoppingList.html'>Shopping List</a></li> -->
+                <li><a href='search.html'>Find Meals</a></li>
+                <li><a onclick='logout()'>Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>My Favorite Meals</h1>
+
+    <table id="favorite_list" class="table table-bordered table-hover table-nonfluid">
+        <tr>
+            <th class="col-xs-1">Meals</th>
+            <th class="col-xs-2">Description</th>
+            <th>Calories</th>
+            <th>Detail Link</th>
+            <th>Move Up</th>
+            <th>Remove</th>
+        </tr>
+        <tr v-cloak v-for="(result, index) in results">
+            <td><img :src="result.img" id="homeImages"></td>
+
+            <td id="homeLabel">{{ result.label }}</td>
+            <td id="homeCals">Calories: {{ result.calories }}</td>
+            <td><a :href="result.url">Recipe Guide Url</a></td>
+            <td>
+                <button class="btn btn-primary" v-on:click="rankUp(index, $event)">Rank Up Meal</button>
+            </td>
+            <td>
+                <button class="btn btn-primary" v-on:click="removeMeal(index, $event)">Remove</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.2/vue.min.js"></script>
+<script src="./js/home.js"></script>
+</body>
+</html>
