@@ -27,23 +27,9 @@
         </div>
     </nav>
 
-    <div id="search_form">
-        <input v-model='searchInput' type="text" placeholder='Search Meals' id="search_input">
-        <button v-on:click='searchMeals()' class="btn btn-primary" id="search_button"> Search</button>
-    </div>
-    <br>
-
-    <table v-cloak id='search_results'>
-        <tr v-for="(result, index) in results" id="searchRow">
-            <td>
-                <img :src="result.img" id="searchImages">
-            </td>
-            <td id="searchLabel">{{ result.label }}</td>
-            <td id="searchCal">Calories: {{ result.calories }}</td>
-            <td><a :href="result.url" target="_blank">Recipe Guide Link</a></td>
-            <td id="btnAddToList">
-                <button class="btn btn-primary" v-on:click="addMeal(index, $event)">Add to Favorites
-                </button>
+    <table v-cloak>
+        <tr v-for="(result, index) in shopping_list">
+            <td>hi
             </td>
         </tr>
     </table>
@@ -53,6 +39,6 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.2/vue.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
-<script src="./js/search.js"></script>
+<script src="./js/shoppingList.js"></script>
 </body>
 </html>
