@@ -32,21 +32,22 @@
         <button v-on:click='searchMeals()' class="btn btn-primary" id="search_button"> Search</button>
     </div>
     <br>
-
-    <table v-cloak id='search_results'>
-        <tr v-for="(result, index) in results" id="searchRow">
-            <td>
-                <img :src="result.img" id="searchImages">
-            </td>
-            <td id="searchLabel">{{ result.label }}</td>
-            <td id="searchCal">Calories: {{ result.calories }}</td>
-            <td><a :href="result.url" target="_blank">Recipe Guide Link</a></td>
-            <td id="btnAddToList">
-                <button class="btn btn-primary" v-on:click="addMeal(index, $event)">Add to Favorites
-                </button>
-            </td>
-        </tr>
-    </table>
+    <div id ="search_table_scroll">
+        <table v-cloak id='search_results'>
+            <tr v-for="(result, index) in results" id="searchRow">
+                <td>
+                    <img :src="result.img" id="searchImages">
+                </td>
+                <td id="searchLabel">{{ result.label }}</td>
+                <td id="searchCal">Calories: {{ result.calories }}</td>
+                <td><a :href="result.url" target="_blank">Recipe Guide Link</a></td>
+                <td id="btnAddToList">
+                    <button class="btn btn-primary" v-on:click="addMeal(index, $event)">Add to Favorites
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
     <br/>
 </div>
 

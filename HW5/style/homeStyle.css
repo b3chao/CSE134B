@@ -27,6 +27,11 @@ table tr td {
 	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
 }
 
+#home_table_scroll
+{
+	height:530px;
+	overflow:auto;
+}
 #homeImages{
 	
 	width:150px;
