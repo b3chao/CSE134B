@@ -20,10 +20,11 @@ var logout = function () {
 }
 
 var vm = new Vue({
-    el: '#favorite_list',
+    el: '#vue-app',
     data: {
       favorites: null,
-      user: null
+      user: null,
+      message: null
     },
     created: function() {
       var $this = this;
