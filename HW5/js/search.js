@@ -69,12 +69,14 @@ var vm = new Vue({
                 cuRef.once("value", function (snapshot) {
                     var cuData = snapshot.val();
 
-                    if (cuData) {
-                        cuData.push(toAdd);
-                    } else {
-                        cuData = [];
-                        cuData.push(toAdd);
+                    if (!cuData) {
+                      cuData = {};
+                      if (!cuData.favorites) {
+                        cuData.favorites = [];
+                      }
                     }
+
+                    cuData.favorites.push(toAdd);
 
                     cuRef.set(cuData);
                     alert("Added " + toAdd['label'] + " to favorites");

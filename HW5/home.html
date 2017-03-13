@@ -36,6 +36,7 @@
             <th>Detail Link</th>
             <th>Move Up</th>
             <th>Remove</th>
+            <th>Add to Shopping list</th>
         </tr>
         <tr v-cloak v-for="(result, index) in favorites">
             <td><img :src="result.img" id="homeImages"></td>
@@ -48,6 +49,9 @@
             </td>
             <td>
                 <button class="btn btn-primary" v-on:click="removeMeal(index, $event)">Remove</button>
+            </td>
+            <td>
+                <button class="btn btn-primary" v-on:click="addIngredients(index)">Add</button>
             </td>
         </tr>
     </table>

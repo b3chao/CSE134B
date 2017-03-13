@@ -33,7 +33,7 @@ var vm = new Vue({
               var cuRef = ref.child($this.user.uid);
               cuRef.once("value", function (snapshot) {
                   var cuData = snapshot.val();
-                  $this.favorites = cuData;
+                  $this.favorites = cuData.favorites;
               });
           }
       });
@@ -45,9 +45,9 @@ var vm = new Vue({
             var $this = this;
             cuRef.once("value", function (snapshot) {
                 var cuData = snapshot.val();
-                cuData.splice(index, 1);
+                cuData.favorites.splice(index, 1);
                 cuRef.set(cuData);
-                $this.favorites = cuData;
+                $this.favorites = cuData.favorites;
             });
         },
         //rank up meal in favorites list
@@ -57,13 +57,27 @@ var vm = new Vue({
                 var $this = this;
                 cuRef.once("value", function(snapshot) {
                     var cuData = snapshot.val();
-                    var temp = cuData[index - 1];
-                    cuData[index - 1] = cuData[index];
-                    cuData[index] = temp;
+                    var temp = cuData.favorites[index - 1];
+                    cuData.favorites[index - 1] = cuData.favorites[index];
+                    cuData.favorites[index] = temp;
                     cuRef.set(cuData);
-                    $this.favorites = cuData;
+                    $this.favorites = cuData.favorites;
                 });
             }
+        },
+        addIngredients: function(index) {
+          var cuRef = ref.child(this.user.uid);
+          var $this = this;
+          cuRef.once("value", function(snapshot) {
+              var cuData = snapshot.val();
+              var meal = cuData.favorites[index];
+              var ingredients = meal.ingredient_array;
+              if (!cuData.shopping_list) {
+                cuData.shopping_list = [];
+              }
+              cuData.shopping_list = cuData.shopping_list.concat(ingredients);
+              cuRef.set(cuData);
+          });
         }
     }
 });
