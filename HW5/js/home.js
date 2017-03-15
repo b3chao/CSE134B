@@ -73,12 +73,23 @@ var vm = new Vue({
               var cuData = snapshot.val();
               var meal = cuData.favorites[index];
               var ingredients = meal.ingredient_array;
+
               if (!cuData.shopping_list) {
                 cuData.shopping_list = [];
               }
-              cuData.shopping_list = cuData.shopping_list.concat(ingredients);
+
+              var food_id = meal.food_id;
+              if (!cuData.shopping_list[food_id]) {
+                cuData.shopping_list[food_id] = ingredients;
+                cuData.shopping_list[food_id].count = 1;
+              } else {
+                cuData.shopping_list[food_id].count += 1;
+              }
+
               cuRef.set(cuData);
           });
+
+          alert("Added to shopping list!");
         }
     }
 });

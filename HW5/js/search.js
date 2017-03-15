@@ -53,6 +53,10 @@ var vm = new Vue({
                         result['url'] = recipe['url'];
                         result['modal_target'] = "#modal_" + i;
                         result['modal_id'] = "modal_" + i;
+                        //food id
+                        var index = recipe['uri'].indexOf('#') + 1;
+                        result['food_id'] = recipe['uri'].slice(index);
+
                         results.push(result);
                     }
 

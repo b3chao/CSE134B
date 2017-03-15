@@ -33,7 +33,9 @@ var vm = new Vue({
               var cuRef = ref.child($this.user.uid);
               cuRef.once("value", function (snapshot) {
                   var cuData = snapshot.val();
-                  $this.shopping_list = cuData.shopping_list;
+
+                  if (cuData != null)
+                    $this.shopping_list = cuData.shopping_list;
               });
           }
       });
