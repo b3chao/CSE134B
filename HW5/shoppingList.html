@@ -15,30 +15,45 @@
 </head>
 
 <body>
-<div class="container" id='vue-app'>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li><a href="home.html">Home</a></li>
-                <li><a href='shoppingList.html'>Shopping List</a></li>
-                <li><a href='search.html'>Find Meals</a></li>
-                <li><a onclick='logout()'>Log Out</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container" id='vue-app'>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href='shoppingList.html'>Shopping List</a></li>
+                    <li><a href='search.html'>Find Meals</a></li>
+                    <li><a onclick='logout()'>Log Out</a></li>
+                </ul>
+            </div>
+        </nav>
 
-    <table v-cloak>
-        <tr v-for="(result, index) in shopping_list">
-            <td>hi
-            </td>
-        </tr>
-    </table>
-    <br/>
-</div>
+        <table v-cloak>
+            <tr>
+                <th class="col-xs-1">Count</th>
+                <th class="col-xs-2">Ingredients</th>
+            </tr>
+            <tr v-for="(result, index) in shopping_list">
+                <td>
+                    <span class="glyphicon glyphicon-minus" aria-hidden="true" v-on:click="decrement(index)"></span>
+                    {{result.count}}
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true" v-on:click="increment(index)"></span>
+                </td>
+                <td>
+                  <ul>
+                    <li v-for="(ingredient, index) in result.ingredient_array">
+                      {{ingredient}}
+                    </li>
+                  </ul>
+                </td>
+            </tr>
+        </table>
+        <br/>
+    </div>
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.2/vue.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
-<script src="./js/shoppingList.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.2/vue.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+    <script src="./js/shoppingList.js"></script>
 </body>
+
 </html>

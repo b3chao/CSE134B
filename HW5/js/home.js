@@ -72,7 +72,8 @@ var vm = new Vue({
           cuRef.once("value", function(snapshot) {
               var cuData = snapshot.val();
               var meal = cuData.favorites[index];
-              var ingredients = meal.ingredient_array;
+              var ingredient_array = meal.ingredient_array;
+              var ingredients = meal.ingredients;
 
               if (!cuData.shopping_list) {
                 cuData.shopping_list = [];
@@ -80,7 +81,9 @@ var vm = new Vue({
 
               var food_id = meal.food_id;
               if (!cuData.shopping_list[food_id]) {
-                cuData.shopping_list[food_id] = ingredients;
+                cuData.shopping_list[food_id] = {};
+                cuData.shopping_list[food_id].ingredient_array = ingredient_array;
+                cuData.shopping_list[food_id].ingredients = ingredients;
                 cuData.shopping_list[food_id].count = 1;
               } else {
                 cuData.shopping_list[food_id].count += 1;
