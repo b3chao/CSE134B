@@ -51,7 +51,7 @@ var vm = new Vue({
                 $this.favorites = cuData.favorites;
 
                 document.getElementById('ret_message').innerHTML = $this.favorites[index].label +" has been removed from favorite list.";
-                    
+
             });
         },
         //rank up meal in favorites list
@@ -78,23 +78,21 @@ var vm = new Vue({
               var meal = cuData.favorites[index];
               var ingredient_array = meal.ingredient_array;
               var ingredients = meal.ingredients;
+              var description = meal.label;
 
               if (!cuData.shopping_list) {
                 cuData.shopping_list = [];
               }
 
               var food_id = meal.food_id;
-              if (!cuData.shopping_list[food_id]) {
-                cuData.shopping_list[food_id] = {};
-                cuData.shopping_list[food_id].ingredient_array = ingredient_array;
-                cuData.shopping_list[food_id].ingredients = ingredients;
-                cuData.shopping_list[food_id].count = 1;
-              } else {
-                cuData.shopping_list[food_id].count += 1;
-              }
-              document.getElementById('ret_message').innerHTML = meal.label + " has been added into shopping list."
-               
+              cuData.shopping_list[food_id] = {};
+              cuData.shopping_list[food_id].ingredient_array = ingredient_array;
+              cuData.shopping_list[food_id].ingredients = ingredients;
+              cuData.shopping_list[food_id].description = description;
+
               cuRef.set(cuData);
+
+              document.getElementById('ret_message').innerHTML = meal.label + " has been added into shopping list."
           });
         }
     }

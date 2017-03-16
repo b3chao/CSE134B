@@ -29,14 +29,18 @@
 
         <table v-cloak>
             <tr>
-                <th class="col-xs-1">Count</th>
+                <th class="col-xs-1">Meal</th>
                 <th class="col-xs-2">Ingredients</th>
+                <th>Remove</th>
             </tr>
             <tr v-for="(result, index) in shopping_list">
                 <td>
+                  {{result.description}}
+                  <!--
                     <span class="glyphicon glyphicon-minus" aria-hidden="true" v-on:click="decrement(index)"></span>
                     {{result.count}}
                     <span class="glyphicon glyphicon-plus" aria-hidden="true" v-on:click="increment(index)"></span>
+                  -->
                 </td>
                 <td>
                   <ul>
@@ -44,6 +48,9 @@
                       {{ingredient}}
                     </li>
                   </ul>
+                </td>
+                <td>
+                  <button class="btn btn-primary" v-on:click="remove(index)">Remove</button>
                 </td>
             </tr>
         </table>

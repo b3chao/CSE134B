@@ -42,6 +42,19 @@ var vm = new Vue({
         });
     },
     methods: {
+      remove: function (index) {
+        var foodRef = ref.child(this.user.uid + "/shopping_list/" + index);
+        foodRef.remove();
+
+        var shoppingListRef = ref.child(this.user.uid + "/shopping_list/");
+        var $this = this;
+
+        shoppingListRef.once("value", function(snapshot) {
+          shopping_list = snapshot.val();
+          $this.shopping_list = shopping_list;
+        });
+      },
+
       increment: function(index, event) {
         var shoppingListRef = ref.child(this.user.uid + "/shopping_list/");
         var $this = this;
