@@ -44,15 +44,18 @@ var vm = new Vue({
     methods: {
       remove: function (index) {
         var foodRef = ref.child(this.user.uid + "/shopping_list/" + index);
+        document.getElementById('ret_message').innerHTML = "The meal has been removed from shopping list.";
+
         foodRef.remove();
 
         var shoppingListRef = ref.child(this.user.uid + "/shopping_list/");
         var $this = this;
-
+        
         shoppingListRef.once("value", function(snapshot) {
           shopping_list = snapshot.val();
           $this.shopping_list = shopping_list;
-        });
+
+          });
       },
 
       increment: function(index, event) {
