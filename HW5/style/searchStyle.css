@@ -26,7 +26,13 @@ table tr td {
 	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
 	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
 }
-
+#ret_message
+{
+	text-align: center;
+	margin-top: 10px;
+	color: white;
+	font-size: 15px;
+}
 #search_table_scroll
 {
 	height:530px;

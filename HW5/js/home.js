@@ -49,6 +49,9 @@ var vm = new Vue({
                 cuData.favorites.splice(index, 1);
                 cuRef.set(cuData);
                 $this.favorites = cuData.favorites;
+
+                document.getElementById('ret_message').innerHTML = $this.favorites[index].label +" has been removed from favorite list.";
+                    
             });
         },
         //rank up meal in favorites list
@@ -63,6 +66,7 @@ var vm = new Vue({
                     cuData.favorites[index] = temp;
                     cuRef.set(cuData);
                     $this.favorites = cuData.favorites;
+                    document.getElementById('ret_message').innerHTML = $this.favorites[index].label + " has been ranked up."
                 });
             }
         },
@@ -88,11 +92,10 @@ var vm = new Vue({
               } else {
                 cuData.shopping_list[food_id].count += 1;
               }
-
+              document.getElementById('ret_message').innerHTML = meal.label + " has been added into shopping list."
+               
               cuRef.set(cuData);
           });
-
-          alert("Added to shopping list!");
         }
     }
 });

@@ -64,7 +64,8 @@ var vm = new Vue({
                     vm['all_results'] = results;
                     vm['results'] = results.slice(0, 5);
                 } else {
-                    alert("No results found!");
+                    document.getElementById('ret_message').innerHTML = "No Result Found";
+                    
                 }
             });
         },
@@ -87,7 +88,8 @@ var vm = new Vue({
                     cuData.favorites.push(toAdd);
 
                     cuRef.set(cuData);
-                    alert("Added " + toAdd['label'] + " to favorites");
+                    document.getElementById('ret_message').innerHTML = "Added " + toAdd['label'] + " to favorites";
+                    
                 });
             }
         },
