@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="./style/style.css" rel="stylesheet">
-    <link href="./style/searchStyle.css" rel="stylesheet">
+    <link href="./style/shoppingListStyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,34 +26,37 @@
                 </ul>
             </div>
         </nav>
+        <p id = "ret_message"></p>
 
-        <table v-cloak>
-            <tr>
-                <th class="col-xs-1">Meal</th>
-                <th class="col-xs-2">Ingredients</th>
-                <th>Remove</th>
-            </tr>
-            <tr v-for="(result, index) in shopping_list">
-                <td>
-                  {{result.description}}
-                  <!--
-                    <span class="glyphicon glyphicon-minus" aria-hidden="true" v-on:click="decrement(index)"></span>
-                    {{result.count}}
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true" v-on:click="increment(index)"></span>
-                  -->
-                </td>
-                <td>
-                  <ul>
-                    <li v-for="(ingredient, index) in result.ingredient_array">
-                      {{ingredient}}
-                    </li>
-                  </ul>
-                </td>
-                <td>
-                  <button class="btn btn-primary" v-on:click="remove(index)">Remove</button>
-                </td>
-            </tr>
-        </table>
+        <div id = "list_table_scroll">
+            <table v-cloak>
+                <tr>
+                    <th class="col-xs-1" id = "shoppingList_label">Meal</th>
+                    <th class="col-xs-2" id = "shoppingList_ingre">Ingredients</th>
+                    <th id = "shoppingList_button">Remove</th>
+                </tr>
+                <tr v-for="(result, index) in shopping_list">
+                    <td id = "shoppingList_label">
+                      {{result.description}}
+                      <!--
+                        <span class="glyphicon glyphicon-minus" aria-hidden="true" v-on:click="decrement(index)"></span>
+                        {{result.count}}
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true" v-on:click="increment(index)"></span>
+                      -->
+                    </td>
+                    <td id = "shoppingList_ingre">
+                      <ul>
+                        <li v-for="(ingredient, index) in result.ingredient_array">
+                          {{ingredient}}
+                        </li>
+                      </ul>
+                    </td>
+                    <td id = "shoppingList_button">
+                      <button class="btn btn-primary" v-on:click="remove(index)">Remove</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <br/>
     </div>
 
